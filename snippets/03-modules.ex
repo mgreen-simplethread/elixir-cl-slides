@@ -1,4 +1,6 @@
 defmodule Math do
+  @my_constant 3.14
+
   def zero?(0) do
     true
   end

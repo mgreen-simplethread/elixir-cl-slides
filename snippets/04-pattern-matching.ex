@@ -39,3 +39,12 @@ User.to_s(%{name: "Mike", age: 33, role: "admin"})
 
 User.is_admin?(user)
 # => false
+
+defmodule Video do
+  def id_from_slug("video:" <> id) do
+    String.to_integer(id)
+  end
+end
+
+Video.id_from_slug("video:555")
+# => 555

@@ -57,8 +57,9 @@ import Snippet from './lib/snippet';
   code={require('!raw-loader!./snippets/03-modules.ex')}
   steps={[
     { notes: 'Modules are used to group and namespace functions, structs, and macros' },
-    { range: [2, 8], notes: 'Modules can have multiple function clauses with the same name. Pattern matching and guards are used to invoke the correct one.' },
-    { range: [6, 8], notes: 'Guard clauses check arguments, and must use pure functions with no side effects' }
+    { lines: [2], notes: 'Attributes are resolved to their values at compile time, like constants' },
+    { range: [4, 10], notes: 'Modules can have multiple function clauses with the same name. Pattern matching and guards are used to invoke the correct one.' },
+    { range: [8, 10], notes: 'Guard clauses check arguments, and must use pure functions with no side effects' }
   ]}
 />
 
@@ -78,6 +79,14 @@ import Snippet from './lib/snippet';
     { range: [23, 25], notes: 'User.to_s/1 will throw an exception if not passed a %User{} struct' },
     { range: [27, 29], notes: 'We can also destructure only certain struct attributes. This function will have a local "role" variable in scope' },
     { range: [32, 41] },
-    { lines: [37, 38], notes: 'Pattern matching is smart enough to know that this IS NOT a User struct' }
+    { lines: [37, 38], notes: 'Pattern matching is smart enough to know that this IS NOT a User struct' },
+    { range: [43, 50], notes: 'We can even use pattern matching to grab substrings' }
   ]}
+/>
+
+---
+
+<Snippet
+  title="Conditionals"
+  code={require('!raw-loader!./snippets/05-conditionals.ex')}
 />
