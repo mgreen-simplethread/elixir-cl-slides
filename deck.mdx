@@ -1,4 +1,5 @@
 export { default as theme } from './lib/theme'
+import { FullScreenCode } from 'mdx-deck/layouts'
 import Snippet from './lib/snippet';
 
 # Elixir & Phoenix
@@ -89,4 +90,11 @@ import Snippet from './lib/snippet';
 <Snippet
   title="Conditionals"
   code={require('!raw-loader!./snippets/05-conditionals.ex')}
+  steps={[
+    { notes: 'Elixir has a few interesting conditionals besides "if" and "unless"' },
+    { range: [7, 12], notes: 'The "case" statement does pattern matching on a single value' },
+    { lines: [8], notes: 'Can partially match the value based on the pattern specified' },
+    { lines: [9], notes: 'Can also bind variables that can be used in the body of the conditionally executed expression' },
+    { lines: [10], notes: 'Underscore is a wildcard - matches anything and everything' }
+  ]}
 />
