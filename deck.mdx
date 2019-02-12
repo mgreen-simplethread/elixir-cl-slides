@@ -49,3 +49,35 @@ import Snippet from './lib/snippet';
     { lines: [25], notes: 'Maps are an un-ordered key/value structure where anything can be a key or a value.' }
   ]}
 />
+
+---
+
+<Snippet
+  title="Modules"
+  code={require('!raw-loader!./snippets/03-modules.ex')}
+  steps={[
+    { notes: 'Modules are used to group and namespace functions, structs, and macros' },
+    { range: [2, 8], notes: 'Modules can have multiple function clauses with the same name. Pattern matching and guards are used to invoke the correct one.' },
+    { range: [6, 8], notes: 'Guard clauses check arguments, and must use pure functions with no side effects' }
+  ]}
+/>
+
+---
+
+<Snippet
+  title="Pattern Matching"
+  code={require('!raw-loader!./snippets/04-pattern-matching.ex')}
+  steps={[
+    { notes: 'Pattern matching is used heavily in Elixir code' },
+    { range: [1, 8], notes: 'Elixir supports multiple function clauses and will execute the first one whose signature matches the arguments' },
+    { range: [2, 5], notes: 'This clause destructures the first item from the rest of the list, prints it, and re-runs the function with the remaining items' },
+    { lines: [7], notes: 'This clause only matches an empty list, and simply returns nil without recursing' },
+    { range: [16, 18], notes: 'MANY Elixir functions return a tuple of status + result rather than throwing exceptions' },
+    { range: [20, 30] },
+    { lines: [21], notes: 'Modules can define Structs, maps that function as data structures with default attributes and validation' },
+    { range: [23, 25], notes: 'User.to_s/1 will throw an exception if not passed a %User{} struct' },
+    { range: [27, 29], notes: 'We can also destructure only certain struct attributes. This function will have a local "role" variable in scope' },
+    { range: [32, 41] },
+    { lines: [37, 38], notes: 'Pattern matching is smart enough to know that this IS NOT a User struct' }
+  ]}
+/>
