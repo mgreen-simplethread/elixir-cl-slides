@@ -1,10 +1,51 @@
-export { future as theme } from 'mdx-deck/themes'
+export { default as theme } from './lib/theme'
+import Snippet from './lib/snippet';
 
 # Elixir & Phoenix
 
 ![Phoenix](./images/phoenix.png)
 
+---
+
+# About Elixir
+
++ Functional paradigm
++ Runs on the Erlang VM
++ Started as a research project by José Valim
++ Syntax influenced by Ruby, programming paradigm more similar to Erlang or Clojure
++ Provides a friendlier syntax for developing massively concurrent, fault tolerant apps
 
 ---
 
-# Slide 2
+# Features
+
+---
+
+<Snippet
+  title="First-class Functions"
+  code={require('!raw-loader!./snippets/01-anonymous-functions.ex')}
+  steps={[
+    { notes: 'Anonymous functions are values like any other' },
+    { lines: [1], notes: 'Defined using the "fn" keyword, terminated with "end"' },
+    { lines: [2], notes: 'Capture syntax defines functions more succinctly' },
+    { range: [4, 7], notes: 'Called with .() to differentiate them from module functions' },
+    { range: [9, 18], notes: 'Functions can have guards and different clauses' }
+  ]}
+/>
+
+---
+
+<Snippet
+  title="Data Structures"
+  code={require('!raw-loader!./snippets/02-data-types.ex')}
+  steps={[
+    { range: [1, 3], notes: 'Strings are "binaries" - collections of bytes' },
+    { lines: [5, 6], notes: 'Concatenate a string with the null byte to see its raw binary value' },
+    { range: [8, 11], notes: 'Concatenation operator returns a new string' },
+    { lines: [13, 14], notes: 'Interpolation also works' },
+    { range: [16, 18], notes: 'Linked list data structures can contain any combo of types' },
+    { lines: [20], notes: 'Tuples are used extensively to report success/failure along with a function return value' },
+    { lines: [22, 23], notes: 'Keyword lists compile to lists of 2-member tuples' },
+    { lines: [25], notes: 'Maps are an un-ordered key/value structure where anything can be a key or a value.' }
+  ]}
+/>
