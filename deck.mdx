@@ -128,6 +128,20 @@ import Snippet from './lib/snippet';
 
 ---
 
+<Snippet
+  title="Comprehensions"
+  code={require('!raw-loader!./snippets/07-comprehensions.ex')}
+  steps={[
+    { notes: 'Comprehensions act as looping constructs, as well as generators and ways to map enumerables' },
+    { lines: [1, 2], notes: 'Equivalent to mapping and squaring a list of numbers' },
+    { range: [4, 6], notes: 'Comprehensions can have an optional filter function' },
+    { range: [8, 10], notes: 'Generator expressions support pattern matching to filter comprehensions too' },
+    { range: [12, 18], notes: 'More generic usage as a loop construct is seen in templates' }
+  ]}
+/>
+
+---
+
 # Concurrency
 
 Elixir lets us use Erlang/OTP for ridiculous levels of concurrency.
@@ -137,3 +151,49 @@ Elixir lets us use Erlang/OTP for ridiculous levels of concurrency.
 + Agent
 + GenServer
 + Supervisor
+
+---
+
+<Snippet
+  title="Processes"
+  code={require('!raw-loader!./snippets/08-processes.ex')}
+  steps={[
+    { notes: 'All Elixir code runs in lightweight Erlang processes' },
+    { notes: 'Processes are rarely used directly' },
+    { range: [1, 8], notes: 'Process share no memory - they pass messages' },
+    { range: [1, 8], notes: 'This process is talking to itself' },
+    { lines: [3], notes: 'Sends an async message to the mailbox of the specified process' },
+    { range: [5, 8], notes: 'Blocks and checks the mailbox for matching messages, executing the first matching clause' },
+    { range: [11, 13], notes: 'Run a function in a new process' },
+    { range: [15, 18], notes: 'Synchronously check for a message from the process and do something with it' },
+    { lines: [20, 21], notes: 'The process exits when the function is done executing' }
+  ]}
+/>
+
+---
+
+<Snippet
+  title="Tasks"
+  code={require('!raw-loader!./snippets/09-tasks.ex')}
+  steps={[
+    { notes: 'Tasks are used for one-off async operations' },
+    { range: [1, 4], notes: 'This function runs in another process' },
+    { range: [6, 8], notes: 'Allowing subsequent code to run without being blocked' },
+    { lines: [9], notes: 'Until Task.await is called and grabs the result' }
+  ]}
+/>
+
+---
+
+<Snippet
+  title="Agents"
+  code={require('!raw-loader!./snippets/10-agents.ex')}
+  steps={[
+    { notes: 'Agents are an abstraction that helps apps maintain state so that multiple processes can access it' },
+    { lines: [2], notes: 'The "use" keyword imports a module and its macros, and executes a callback function' },
+    { range: [4, 7], notes: 'Starts an agent that gets its state from a function' },
+    { range: [9, 12], notes: 'Tells the agent how to retrieve its value' },
+    { range: [14, 17], notes: 'Passes a function to the agent that it applies to the current value to derive a new one' },
+    { range: [20, 26], notes: 'This module can be called by any process in the app to talk to the Counter agent' }
+  ]}
+/>
