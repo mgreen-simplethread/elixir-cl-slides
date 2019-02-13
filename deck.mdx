@@ -10,11 +10,55 @@ import Snippet from './lib/snippet';
 
 # About Elixir
 
+---
+
 + Functional paradigm
 + Runs on the Erlang VM
 + Started as a research project by José Valim
 + Syntax influenced by Ruby, programming paradigm more similar to Erlang or Clojure
 + Provides a friendlier syntax for developing massively concurrent, fault tolerant apps
+
+---
+
+# On the Shoulders of Giants
+
+![Erlang](./images/erlang.jpg)
+
+---
+
+# Erlang Features
+
++ Functional
++ Distributed
++ Immutable data
++ Pattern matching
++ Applications are "Write once, run forever" - Joe Armstrong
+
+---
+
+# Notable Uses
+
++ Telecommunications (Ericsson, probably everyone else too)
++ Banking, Finance, Real-time trading (Goldman Sachs)
++ Instant messaging (ejabberd, WhatsApp)
++ Spam prevention at Pinterest
+
+---
+
+<Snippet
+  title="Syntax is a little confusing, though"
+  lang="erlang"
+  code={require('!raw-loader!./snippets/00-quicksort.erl')}
+  notes="Erlang evolved from Prolog"
+/>
+
+---
+
+<Snippet
+  title="After a bit of alchemy..."
+  code={require('!raw-loader!./snippets/00-quicksort.ex')}
+  notes="It does the same thing, but coming from Ruby, this is much more intelligible to me at first glance"
+/>
 
 ---
 
@@ -192,8 +236,10 @@ Elixir lets us use Erlang/OTP for ridiculous levels of concurrency.
     { notes: 'Agents are an abstraction that helps apps maintain state so that multiple processes can access it' },
     { lines: [2], notes: 'The "use" keyword imports a module and its macros, and executes a callback function' },
     { range: [4, 7], notes: 'Starts an agent that gets its state from a function' },
+    { tokens: { 6: [12] }, notes: 'Resolves at compile time to "Counter"' },
     { range: [9, 12], notes: 'Tells the agent how to retrieve its value' },
     { range: [14, 17], notes: 'Passes a function to the agent that it applies to the current value to derive a new one' },
     { range: [20, 26], notes: 'This module can be called by any process in the app to talk to the Counter agent' }
   ]}
 />
+
