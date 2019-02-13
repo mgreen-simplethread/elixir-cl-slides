@@ -58,9 +58,14 @@ import Snippet from './lib/snippet';
   code={require('!raw-loader!./snippets/03-modules.ex')}
   steps={[
     { notes: 'Modules are used to group and namespace functions, structs, and macros' },
-    { lines: [2], notes: 'Attributes are resolved to their values at compile time, like constants' },
-    { range: [4, 10], notes: 'Modules can have multiple function clauses with the same name. Pattern matching and guards are used to invoke the correct one.' },
-    { range: [8, 10], notes: 'Guard clauses check arguments, and must use pure functions with no side effects' }
+    { range: [2, 4], notes: 'Documentation is built into the language using attributes and multiline, Markdown formatted strings' },
+    { lines: [6], notes: 'Attributes are resolved to their values at compile time, like constants' },
+    { range: [8, 15], notes: '@doc tags are available as online help in IEX REPL and can be turned into HTML API docs' },
+    { range: [16, 22], notes: 'Modules can have multiple function clauses with the same name. Pattern matching and guards are used to invoke the correct one.' },
+    { range: [20, 22], notes: 'Guard clauses check arguments, and must use pure functions with no side effects' },
+    { range: [31, 39] },
+    { lines: [32], notes: 'Default arguments are specified using two backslashes' },
+    { lines: [36], notes: 'Private methods in modules are defined using the "defp" macro' }
   ]}
 />
 
@@ -91,10 +96,12 @@ import Snippet from './lib/snippet';
   title="Conditionals"
   code={require('!raw-loader!./snippets/05-conditionals.ex')}
   steps={[
-    { notes: 'Elixir has a few interesting conditionals besides "if" and "unless"' },
-    { range: [7, 12], notes: 'The "case" statement does pattern matching on a single value' },
-    { lines: [8], notes: 'Can partially match the value based on the pattern specified' },
-    { lines: [9], notes: 'Can also bind variables that can be used in the body of the conditionally executed expression' },
-    { lines: [10], notes: 'Underscore is a wildcard - matches anything and everything' }
+    { notes: 'Elixir has a couple interesting conditionals besides "if" and "unless"' },
+    { range: [15, 19], notes: 'The "case" statement does pattern matching on a single value' },
+    { lines: [16], notes: 'Can partially match the value based on the pattern specified' },
+    { lines: [17], notes: 'Can also bind variables that can be used in the body of the conditionally executed expression' },
+    { lines: [18], notes: 'Underscore is a wildcard - matches anything and everything' },
+    { range: [22, 30], notes: 'cond statements can test multiple different statements for truthiness' },
+    { range: [32, 38], notes: 'If and unless work like you\'d expect' }
   ]}
 />
