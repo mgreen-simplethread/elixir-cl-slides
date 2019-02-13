@@ -102,6 +102,38 @@ import Snippet from './lib/snippet';
     { lines: [17], notes: 'Can also bind variables that can be used in the body of the conditionally executed expression' },
     { lines: [18], notes: 'Underscore is a wildcard - matches anything and everything' },
     { range: [22, 30], notes: 'cond statements can test multiple different statements for truthiness' },
-    { range: [32, 38], notes: 'If and unless work like you\'d expect' }
+    { range: [32, 38], notes: "If and unless work like you'd expect" }
   ]}
 />
+
+---
+
+<Snippet
+  title="Enumerables and Pipelines"
+  code={require('!raw-loader!./snippets/06-enums-pipelines.ex')}
+  steps={[
+    { notes: 'The Enum module operates on ranges, lists, maps, etc.' },
+    { range: [4, 7], notes: 'Two equivalent calls to Enum.map' },
+    { range: [12, 18], notes: "The pipe operator passes the previous expression's return value into the next function's first argument slot" },
+    { lines: [15], notes: 'Every integer between 1 and 100,000' },
+    { lines: [16], notes: 'Multiplied by 3' },
+    { lines: [17], notes: 'Even numbers removed' },
+    { lines: [18], notes: 'Return the sum of the list' },
+    { lines: [20, 21], notes: 'It gets a lot harder to read without pipes' },
+    { range: [12, 18], notes: 'Enum functions are eagerly evaluated, so intermediate results are calculated at each step' },
+    { range: [23, 28], notes: 'The Stream module queues functions until something requires a value. No intermediate values.' },
+    { lines: [28], notes: 'Nothing is actually calculated until we get here.' }
+  ]}
+/>
+
+---
+
+# Concurrency
+
+Elixir lets us use Erlang/OTP for ridiculous levels of concurrency.
+
++ Process
++ Task
++ Agent
++ GenServer
++ Supervisor
