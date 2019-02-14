@@ -16,7 +16,7 @@ defmodule Math do
     iex> Math.zero(1)
     false
   """
-  @spec zero?(integer) :: boolean()
+  @spec zero?(integer()) :: boolean()
   def zero?(0) do
     true
   end
