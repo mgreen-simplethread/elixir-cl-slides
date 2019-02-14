@@ -12,13 +12,22 @@ defmodule Math do
 
     iex> Math.zero?(0)
     true
+
+    iex> Math.zero(1)
+    false
   """
+  @spec zero?(integer) :: boolean()
   def zero?(0) do
     true
   end
 
   def zero?(num) when is_integer(num) do
     false
+  end
+
+  @spec pi() :: number()
+  def pi do
+    @my_constant
   end
 end
 
