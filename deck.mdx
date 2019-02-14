@@ -271,6 +271,23 @@ Elixir lets us use Erlang/OTP for ridiculous levels of concurrency.
 
 ---
 
+# Metaprogramming
+
+---
+
+<Snippet
+  title="Macros"
+  code={require('!raw-loader!./snippets/11-macros.ex')}
+  steps={[
+    { notes: 'Elixir code can be represented using native Elixir data types, enabling compile-time macros and DSLs' },
+    { range: [1, 2], notes: 'Code can be transformed into tuples of instructions' },
+    { range: [4, 5], notes: 'And back to Elixir syntax' },
+    { range: [7, 9], notes: 'Code can be unquoted and used to dynamically name functions and arguments' }
+  ]}
+/>
+
+---
+
 # But how do you build web apps?
 
 ---
