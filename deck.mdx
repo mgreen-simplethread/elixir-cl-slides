@@ -17,7 +17,7 @@ export default Split
 ![Elixir Logo](./images/elixir.png)
 
 + Runs on the Erlang VM
-+ Started as a research project by José Valim
++ Began as a research project by José Valim in 2011
 + Syntax influenced by Ruby, programming paradigm more similar to Erlang or Clojure
 + Provides a friendlier syntax for developing massively concurrent, fault tolerant apps
 
@@ -112,6 +112,7 @@ Basically the Erlang ecosystem and runtime:
     { range: [18, 20], notes: 'Linked list data structures can contain any combo of types' },
     { range: [25, 27], notes: 'Single quoted "strings" are actually charlists (linked lists of character codepoints)' },
     { range: [25, 27], notes: 'Charlists are mostly used to interact with Erlang libraries that lack binary support' },
+    { lines: [29], notes: 'Tuples are stored contiguously in memory, unlike lists' },
     { lines: [29], notes: 'Tuples are used extensively to report success/failure along with a function return value' },
     { lines: [31, 32], notes: 'Keyword lists compile to lists of 2-member tuples' },
     { lines: [34], notes: 'Maps are an un-ordered key/value structure where anything can be a key or a value.' },
@@ -283,7 +284,14 @@ Elixir lets us use Erlang/OTP for ridiculous levels of concurrency.
     { notes: 'Elixir code can be represented using native Elixir data types, enabling compile-time macros and DSLs' },
     { range: [1, 2], notes: 'Code can be transformed into tuples of instructions' },
     { range: [4, 5], notes: 'And back to Elixir syntax' },
-    { range: [7, 9], notes: 'Code can be unquoted and used to dynamically name functions and arguments' }
+    { range: [7, 9], notes: 'Code can be unquoted and used to dynamically name functions and arguments' },
+    { range: [12, 22], notes: 'This is a module that defines both a macro and a function version of an "unless" construct' },
+    { range: [12, 22], notes: '(Yes, this already exists in the language)' },
+    { range: [13, 15], notes: 'This defines the construct as a function that accepts a block' },
+    { range: [17, 21], notes: 'This defines the same logic as a macro' },
+    { lines: [24], notes: 'Importing a module makes its functions and macros available without the namespace.' },
+    { range: [26, 28], notes: 'The function version fails because Elixir evaluates function arguments before executing the function' },
+    { range: [30, 31], notes: 'The macro version works, because macros do not evaluate their arguments before execution' }
   ]}
 />
 

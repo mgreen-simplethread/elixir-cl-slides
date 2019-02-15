@@ -14,9 +14,18 @@ defmodule Unless do
     if(!clause, do: expression)
   end
 
-  def macro_unless(clause, do: expression) do
+  defmacro macro_unless(clause, do: expression) do
     quote do
       if(!unquote(clause), do: unquote(expression))
     end
   end
 end
+
+import Unless
+
+fun_unless true, do: IO.puts("this shouldn't render")
+# this shouldn't render
+# => nil
+
+macro_unless true, do: IO.puts("this shouldn't render")
+# => nil

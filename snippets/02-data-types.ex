@@ -22,7 +22,7 @@ Enum.count(my_list) # O(n) complexity
 my_list ++ [4, 5, 6]
 # => [1, 2, 3, "whatever", <<255>>, 4, 5, 6]
 
-char_list = 'Es ist nich ein string'
+char_list = 'Es ist nicht ein string'
 List.first(char_list)
 # => 69
 
