@@ -13,6 +13,8 @@ my_string
 "#{my_string} world"
 # => "Hello world"
 
+an_atom = :an_atom
+
 my_list = [1, 2, 3, "whatever", <<255>>]
 Enum.count(my_list) # O(n) complexity
 # => 5
